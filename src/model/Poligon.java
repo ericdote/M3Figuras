@@ -12,14 +12,16 @@ package model;
 public abstract class Poligon extends Figura {
     
     protected int lados;
+    protected double[] medidaLados;
    
     public Poligon(String nom) {
         super(nom);
     }
 
-    public Poligon(int lados, String nom) {
+    public Poligon(int lados, double[] medidaLados, String nom) {
         super(nom);
         this.lados = lados;
+        this.medidaLados = medidaLados;
     }
 
     @Override
@@ -27,8 +29,24 @@ public abstract class Poligon extends Figura {
 
     @Override
     public abstract double calculaPerimetre();
-    
+
     public int getLados() {
         return lados;
-    }    
+    }
+
+    public double[] getMedidaLados() {
+        return medidaLados;
+    }
+
+    public void setLados(int lados) {
+        this.lados = lados;
+    }
+
+    public void setMedidaLados(double[] medidaLados) {
+        this.medidaLados = medidaLados;
+    }
+
+  
+    
+   
 }

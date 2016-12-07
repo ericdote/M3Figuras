@@ -10,26 +10,21 @@ package model;
  * @author ALUMNEDAM
  */
 public abstract class NoRegular extends Poligon {
-    
-    protected double longitud;
 
-    public NoRegular(double longitud, int lados, String nom) {
-        super(lados, nom);
-        this.longitud = longitud;
+    public NoRegular(int lados, double[] medidaLados, String nom) {
+        super(lados, medidaLados, nom);
     }
 
+    public NoRegular(String nom) {
+        super(nom);
+    }
+    
     @Override
     public abstract double calculaArea();
 
     @Override
     public abstract double calculaPerimetre();
 
-    public double getLongitud() {
-        return longitud;
-    }
 
-    public void setLongitud(double longitud) {
-        this.longitud = longitud;
-    }
     
 }

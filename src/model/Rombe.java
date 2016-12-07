@@ -11,18 +11,45 @@ package model;
  */
 public class Rombe extends NoRegular {
 
-    public Rombe(double longitud, int lados, String nom) {
-        super(longitud, lados, nom);
-    }    
-    
+    private double diagonalMayor, diagonalMenor;
+
+    public Rombe(double diagonalMayor, double diagonalMenor, String nom) {
+        super(nom);
+        this.diagonalMayor = diagonalMayor;
+        this.diagonalMenor = diagonalMenor;
+    }
+        
     @Override
     public double calculaArea() {
-        return (longitud * longitud) / 2;
+        return (diagonalMayor * diagonalMenor) / 2;
     }
 
     @Override
     public double calculaPerimetre() {
-        return Math.sqrt(Math.pow((longitud)/2, 2) + Math.pow((longitud)/2, 2));
+        return Math.sqrt(Math.pow((diagonalMenor)/2, 2) + Math.pow((diagonalMayor)/2, 2));
     }
+
+    public double getDiagonalMayor() {
+        return diagonalMayor;
+    }
+
+    public void setDiagonalMayor(double diagonalMayor) {
+        this.diagonalMayor = diagonalMayor;
+    }
+
+    public double getDiagonalMenor() {
+        return diagonalMenor;
+    }
+
+    public void setDiagonalMenor(double diagonalMenor) {
+        this.diagonalMenor = diagonalMenor;
+    }
+
+    @Override
+    public String toString() {
+        return "Rombe{" + "diagonalMayor=" + diagonalMayor + ", diagonalMenor=" + diagonalMenor + '}';
+    }
+    
+    
     
 }

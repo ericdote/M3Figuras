@@ -11,20 +11,39 @@ package model;
  */
 public class Trapezi extends NoRegular{
 
-    public Trapezi(double longitud, int lados, String nom) {
-        super(longitud, lados, nom);
+    double altura;
+
+    public Trapezi(double altura, int lados, double[] medidaLados, String nom) {
+        super(lados, medidaLados, nom);
+        this.altura = altura;
+    }  
+
+    public Trapezi(String nom) {
+        super(nom);
     }
 
     @Override
     public double calculaArea() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return ((medidaLados[0] + medidaLados[1])/2) * altura ;
     }
 
     @Override
     public double calculaPerimetre() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return (medidaLados[0] + medidaLados[1] + medidaLados[2] + medidaLados[3]);
     }
-    
+
+    public double getAltura() {
+        return altura;
+    }
+
+    public void setAltura(double altura) {
+        this.altura = altura;
+    }   
+
+    @Override
+    public String toString() {
+        return "Trapezi{" + "altura=" + altura + '}';
+    }
     
     
 }

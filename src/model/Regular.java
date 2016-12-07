@@ -1,22 +1,11 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package model;
 
-/**
- *
- * @author ALUMNEDAM
- */
 public class Regular extends Poligon{
 
-    private double longitud;
-    
-    public Regular(double longitud, int lados, String nom) {
-        super(lados, nom);
-        this.longitud = longitud;
-    }
+    public Regular(int lados, double[] medidaLados, String nom) {
+        super(lados, medidaLados, nom);
+    }    
+   
 
     @Override
     public double calculaArea() {
@@ -25,25 +14,36 @@ public class Regular extends Poligon{
 
     @Override
     public double calculaPerimetre() {
-        return lados*longitud;
+        return lados*medidaLados[0];
     } 
     
     public double calculaApotema(){
-        double apotema = longitud / (2*Math.tan((360/lados)/2));
+        double apotema = medidaLados[0] / (2*Math.tan((360/lados)/2));
         return apotema;
     }
 
-    public double getLongitud() {
-        return longitud;
-    }
 
-    public void setLongitud(double longitud) {
-        this.longitud = longitud;
+    @Override
+    public int getLados() {
+        return lados;
     }
 
     @Override
-    public String toString() {
-        return "Regular{" + "longitud=" + longitud + '}';
+    public void setLados(int lados) {
+        this.lados = lados;
     }
+
+    @Override
+    public double[] getMedidaLados() {
+        return medidaLados;
+    }
+
+    @Override
+    public void setMedidaLados(double[] medidaLados) {
+        this.medidaLados = medidaLados;
+    }
+    
+    
+
     
 }
