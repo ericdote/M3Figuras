@@ -11,13 +11,22 @@ package model;
  */
 public abstract class NoRegular extends Poligon {
 
-    public NoRegular(int lados, double[] medidaLados, String nom) {
-        super(lados, medidaLados, nom);
+    protected double[] medidaLados;
+
+    public NoRegular(double[] medidaLados, int lados, String nom) {
+        super(lados, nom);
+        this.medidaLados = medidaLados;
     }
 
     public NoRegular(String nom) {
         super(nom);
     }
+
+    public NoRegular(int lados, String nom) {
+        super(lados, nom);
+    }
+    
+   
     
     @Override
     public abstract double calculaArea();

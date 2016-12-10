@@ -13,10 +13,10 @@ public class Trapezi extends NoRegular{
 
     double altura;
 
-    public Trapezi(double altura, int lados, double[] medidaLados, String nom) {
-        super(lados, medidaLados, nom);
+    public Trapezi(double altura, double[] medidaLados, int lados, String nom) {
+        super(medidaLados, lados, nom);
         this.altura = altura;
-    }  
+    }
 
     public Trapezi(String nom) {
         super(nom);
@@ -38,12 +38,24 @@ public class Trapezi extends NoRegular{
 
     public void setAltura(double altura) {
         this.altura = altura;
-    }   
+    } 
+
+    public double[] getMedidaLados() {
+        return medidaLados;
+    }
+
+    public void setMedidaLados(double[] medidaLados) {
+        this.medidaLados = medidaLados;
+    }
+    
+    
 
     @Override
     public String toString() {
-        return "Trapezi{" + "altura=" + altura + '}';
+        return "Trapezi{ nom= " + nom + " altura=" + altura + " baseMayor= " + medidaLados[0] + " baseMenor= "  + medidaLados[1] + " diagonales= " + medidaLados[2] + " perimetro= " + calculaPerimetre() + " area= " + calculaArea() +  '}';
     }
+
+ 
     
     
 }

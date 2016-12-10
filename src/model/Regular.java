@@ -2,11 +2,13 @@ package model;
 
 public class Regular extends Poligon{
 
-    public Regular(int lados, double[] medidaLados, String nom) {
-        super(lados, medidaLados, nom);
-    }    
-   
+    double medidaLado;
 
+    public Regular(double medidaLado, int lados, String nom) {
+        super(lados, nom);
+        this.medidaLado = medidaLado;
+    }
+    
     @Override
     public double calculaArea() {
        return (calculaPerimetre() * calculaApotema()) / 2;
@@ -14,11 +16,11 @@ public class Regular extends Poligon{
 
     @Override
     public double calculaPerimetre() {
-        return lados*medidaLados[0];
+        return lados*medidaLado;
     } 
     
     public double calculaApotema(){
-        double apotema = medidaLados[0] / (2*Math.tan((360/lados)/2));
+        double apotema = medidaLado / (2*Math.tan((360/lados)/2));
         return apotema;
     }
 
@@ -33,14 +35,17 @@ public class Regular extends Poligon{
         this.lados = lados;
     }
 
-    @Override
-    public double[] getMedidaLados() {
-        return medidaLados;
+    public double getMedidaLado() {
+        return medidaLado;
+    }
+
+    public void setMedidaLado(double medidaLado) {
+        this.medidaLado = medidaLado;
     }
 
     @Override
-    public void setMedidaLados(double[] medidaLados) {
-        this.medidaLados = medidaLados;
+    public String toString() {
+        return "Regular{nom=" + nom + " lados= " + lados + " medidaLados= " + medidaLado + " area= " + calculaArea() + " perimetre= " + calculaPerimetre() + '}';
     }
     
     

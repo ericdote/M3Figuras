@@ -11,19 +11,19 @@ package model;
  */
 public abstract class Poligon extends Figura {
     
-    protected int lados;
-    protected double[] medidaLados;
-   
+    protected int lados;    
+
     public Poligon(String nom) {
         super(nom);
     }
 
-    public Poligon(int lados, double[] medidaLados, String nom) {
+    public Poligon(int lados, String nom) {
         super(nom);
         this.lados = lados;
-        this.medidaLados = medidaLados;
     }
-
+    
+    
+   
     @Override
     public abstract double calculaArea();
 
@@ -34,17 +34,11 @@ public abstract class Poligon extends Figura {
         return lados;
     }
 
-    public double[] getMedidaLados() {
-        return medidaLados;
-    }
-
     public void setLados(int lados) {
         this.lados = lados;
     }
 
-    public void setMedidaLados(double[] medidaLados) {
-        this.medidaLados = medidaLados;
-    }
+
 
   
     

@@ -3,7 +3,7 @@ package model;
 
 public abstract class Figura {
     
-    private String nom;
+    final String nom;   
 
     public Figura(String nom) {
         this.nom = nom;

@@ -18,7 +18,7 @@ public class Rombe extends NoRegular {
         this.diagonalMayor = diagonalMayor;
         this.diagonalMenor = diagonalMenor;
     }
-        
+    
     @Override
     public double calculaArea() {
         return (diagonalMayor * diagonalMenor) / 2;
@@ -47,9 +47,6 @@ public class Rombe extends NoRegular {
 
     @Override
     public String toString() {
-        return "Rombe{" + "diagonalMayor=" + diagonalMayor + ", diagonalMenor=" + diagonalMenor + '}';
-    }
-    
-    
-    
+        return "Rombe{ nom= " + nom + "diagonalMayor=" + diagonalMayor + ", diagonalMenor=" + diagonalMenor + " perimetre= " + calculaPerimetre() + " area= " + calculaArea() + '}';
+    } 
 }
